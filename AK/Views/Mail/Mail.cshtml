@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Mail Page";
+}
+
+
+<div class="cordialform">
+    <h1>Customer Support</h1>
+    <form action="SendEmail" method="post">
+        <div class="flex-rev">
+            <input type="text" placeholder="Abdul Somad" name="receiver" id="ContactForm1_contact-form-name" value="" />
+            <label for="ContactForm1_contact-form-name">Full Name</label>
+        </div>
+        <div class="flex-rev">
+            <input type="email" placeholder="cordialblogger@gmail.com" name="subject" id="ContactForm1_contact-form-email" value="" />
+            <label for="ContactForm1_contact-form-email">Your Email</label>
+        </div>
+        <div class="flex-rev">
+<textarea placeholder="Your Message Here...."  name="message" id="ContactForm1_contact-form-email-message"></textarea>
+            <label for="ContactForm1_contact-form-email-message">Email Message</label>
+        </div>
+        <input id="ContactForm1_contact-form-submit" class="contactbutton" type="button" value="SendEmail" />
+        <div class="cordialformmessage">
+            <p id="ContactForm1_contact-form-error-message" class="contact-form-error-message-with-border"></p>
+            <p id="ContactForm1_contact-form-success-message" class="contact-form-success-message"></p>
+        </div>
+    </form>
+</div>
+
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .cordialform {
+        width: 100%;
+        padding: 20px;
+        border-style: groove;
+        border-radius: 5px
+    }
+
+    .cordialform {
+        background-color: #388d80;
+        color: #fff
+    }
+
+        .cordialform h1 {
+            text-align: center;
+            margin-bottom: 20px
+        }
+
+    .flex-rev {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 10px;
+        width: 100%
+    }
+
+        .flex-rev input, .flex-rev textarea {
+            border: none;
+            background-color: #e6e6e6;
+            padding: 12px 10px;
+            font-size: 16px;
+            resize: none;
+            margin-top: 7px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+            color: #243342;
+            outline-color: #243342;
+            outline-width: thin;
+            -webkit-appearance: none
+        }
+
+        .flex-rev textarea {
+            height: 250px
+        }
+
+    .contactbutton {
+        float: right;
+        background-color: #388d80;
+        color: #fff
+    }
+
+    .contactbutton {
+        display: inline-block;
+        padding: 14px 30px;
+        margin-right: 0;
+        text-decoration: none;
+        letter-spacing: 1.2px;
+        font-size: 15px;
+        border: 1px solid #243342;
+        border-radius: 5px
+    }
+
+        .contactbutton:hover {
+            background: rgba(0,0,0,.3)
+        }
+
+    .cordialformmessage {
+        display: inline-block;
+        width: 100%;
+        height: 25px;
+        margin: 0 auto
+    }
+
+        .cordialformmessage p {
+            text-align: center;
+            line-height: 1.6;
+            margin: 0;
+            color: #fff
+        }
+</style>
