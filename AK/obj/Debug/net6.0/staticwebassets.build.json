@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "E6Bci/xNK0QE9c/q+HrTlC4S0S22F93LynGTQnSb4Gk=",
+  "Hash": "ZmoflCz24NityVHY1qNe4lXrpqaPyklgP4DXKKc8rWM=",
   "Source": "AK",
   "BasePath": "_content/AK",
   "Mode": "Default",
@@ -1105,6 +1105,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\my use\\AK-proj-app\\AK\\wwwroot\\Images\\img1.jpg",
+      "SourceId": "AK",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\my use\\AK-proj-app\\AK\\wwwroot\\",
+      "BasePath": "_content/AK",
+      "RelativePath": "Images/img1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\img1.jpg"
+    },
+    {
       "Identity": "D:\\my use\\AK-proj-app\\AK\\wwwroot\\Images\\img111.jpeg",
       "SourceId": "AK",
       "SourceType": "Discovered",
@@ -1120,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\img111.jpeg"
+    },
+    {
+      "Identity": "D:\\my use\\AK-proj-app\\AK\\wwwroot\\Images\\immmm.webp",
+      "SourceId": "AK",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\my use\\AK-proj-app\\AK\\wwwroot\\",
+      "BasePath": "_content/AK",
+      "RelativePath": "Images/immmm.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\immmm.webp"
     },
     {
       "Identity": "D:\\my use\\AK-proj-app\\AK\\wwwroot\\js\\site.js",
