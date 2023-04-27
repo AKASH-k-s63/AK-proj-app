@@ -5,10 +5,17 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-
-<div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+<head>
+    @*<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">*@
+   @* <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">*@
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+</head>
+<div class="row" >
+    <div class="col-md-6">
+        <form id="registerForm" class='form' asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2>Create a new account.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -17,22 +24,26 @@
                 <label asp-for="Input.Name"></label>
                 <span asp-validation-for="Input.Name" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-floating">
                 <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                 <label asp-for="Input.Email"></label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-floating">
                 <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.Password"></label>
+                <label asp-for="Input.Password" >Password</label>
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-floating">
                 <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
                 <label asp-for="Input.ConfirmPassword"></label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <br />
+            <button id="registerSubmit" type="submit" class="w-10 btn btn-lg btn-primary">Register</button>
         </form>
     </div>
     <div class="col-md-6 col-md-offset-2">
@@ -47,6 +58,47 @@
                             There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
                             about setting up this ASP.NET application to support logging in via external services</a>.
                         </p>
+                        <!-- Facebook -->
+                        <i class="fab fa-facebook-f"></i>
+
+                        <!-- Twitter -->
+                        <i class="fab fa-twitter"></i>
+
+                        <!-- Google -->
+                        <i class="fab fa-google"></i>
+
+                        <!-- Instagram -->
+                        <i class="fab fa-instagram"></i>
+
+                        <!-- Linkedin -->
+                        <i class="fab fa-linkedin-in"></i>
+
+                        <!-- Pinterest -->
+                        <i class="fab fa-pinterest"></i>
+
+                        <!-- Vkontakte -->
+                        <i class="fab fa-vk"></i>
+
+                        <!-- Stack overflow -->
+                        <i class="fab fa-stack-overflow"></i>
+
+                        <!-- Youtube -->
+                        <i class="fab fa-youtube"></i>
+
+                        <!-- Slack -->
+                        <i class="fab fa-slack-hash"></i>
+
+                        <!-- Github -->
+                        <i class="fab fa-github"></i>
+
+                        <!-- Dribbble -->
+                        <i class="fab fa-dribbble"></i>
+
+                        <!-- Reddit -->
+                        <i class="fab fa-reddit-alien"></i>
+
+                        <!-- Whatsapp -->
+                        <i class="fab fa-whatsapp"></i>
                     </div>
                 }
                 else
@@ -70,3 +122,116 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+
+    <style>
+        *
+        .form
+        {
+            position: relative;
+            background: #060c21;
+            border: 1px solid #000;
+            width: 350px;
+            padding: 40px 40px 60px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .form::before
+        {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            bottom: -2px;
+            left: -2px;
+            background: linear-gradient(315deg,#e91e63,#5d02ff);
+            z-index: -1;
+            transform: skew(2deg,1deg);
+            border-radius: 10px;
+        }
+        .form h2
+        {
+            color: #fff;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+        .form .input
+        {
+            margin-top: 40px;
+            text-align: left;
+        }
+        .form .input .inputBox
+        {
+            margin-top: 10px;
+        }
+        .form .input .inputBox label
+        {
+            display: block;
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        .form .input .inputBox input
+        {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            padding: 5px 15px;
+            background:linear-gradient(315deg,#e91e63,#5d02ff) ;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+        .form .input .inputBox input[type="submit"]
+        {
+            cursor: pointer;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+        .form .input .inputBox input[type="submit"]:hover
+        {
+            background:linear-gradient(315deg,#5d02ff,#e91e63) ;
+        }
+        .form .input .inputBox input[type="submit"]:active
+        {
+            color: rgba(255, 255, 255, 0.521);
+            background:linear-gradient(315deg,#e91e6271,#5f02ff8c) ;
+        }
+        .forgot
+        {
+            margin-top: 10px;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .forgot a
+        {
+            color: #ff0800;
+        }
+            .register
+        {
+            margin-top: 10px;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .register a
+        {
+            color: #ff0800;
+                .resendmail
+        {
+            margin-top: 10px;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .resendmail a
+        {
+            color: #ff0800;
+        }
+        }
+
+    </style>
