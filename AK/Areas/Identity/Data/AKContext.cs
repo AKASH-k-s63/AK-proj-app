@@ -1,4 +1,5 @@
 ﻿using AK.Areas.Identity.Data;
+using AK.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,8 @@ public class AKContext : IdentityDbContext<AKUser>
         : base(options)
     {
     }
+
+    public virtual DbSet<MailDTo> Mail { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

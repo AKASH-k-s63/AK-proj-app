@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.Mail;
 using System.Net;
+using AK.Areas.Identity.Data;
+using AK.Models;
 
 namespace AK.Controllers
 {
@@ -12,48 +14,50 @@ namespace AK.Controllers
         {
             _logger = logger;
         }
+        [HttpGet]
         public IActionResult Mail()
         {
+            //MailDTo model = new MailDTo();
+            //// Set the email details
+            //model.From = "akashks6341@gmail.com";
+            //model.To = "akashks6341@gmail.com";
+            //model.Subject = "Test Email";
+            //model.Message= "This is a test email sent from MVC.";
+
+            //// Send the email
+            //Mail(model);
+
             return View();
+           
         }
 
         [HttpPost]
-        public ActionResult SendEmail(string receiver, string subject, string message)
+        public ViewResult Mail(MailDTo Mail)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    var senderEmail = new MailAddress("akashks63697@gmail.com", "Akash");
-                    var receiverEmail = new MailAddress(receiver, "Receiver");
-                    var password = "PODAPANNIpayalae";
-                    var sub = subject;
-                    var body = message;
-                    var smtp = new SmtpClient
-                    {
-                        Host = "smtp.gmail.com",
-                        Port = 587,
-                        EnableSsl = true,
-                        DeliveryMethod = SmtpDeliveryMethod.Network,
-                        UseDefaultCredentials = false,
-                        Credentials = new NetworkCredential(senderEmail.Address, password)
-                    };
-                    using (var mess = new MailMessage(senderEmail, receiverEmail)
-                    {
-                        Subject = subject,
-                        Body = body
-                    })
-                    {
-                        smtp.Send(mess);
-                    }
-                    return View();
-                }
+                MailMessage mail = new MailMessage();
+                mail.To.Add(Mail.To);
+                mail.From = new MailAddress(Mail.From);
+                mail.Subject = Mail.Subject;
+                string Body = Mail.Message;
+                mail.Body = Body;
+                mail.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = new System.Net.NetworkCredential("akashks6341@gmail.com", "zlhxfpivlrpqnsxn"); // Enter seders User name and password  
+                smtp.EnableSsl = true;
+                smtp.Send(mail);
+                return View("Index", Mail);
+
+                //return RedirectToAction("Mail");
             }
-            catch (Exception)
+            else
             {
-                //ViewBag.Error = "Some Error";
+                return View();
             }
-            return View();
         }
 
     }
